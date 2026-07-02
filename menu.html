@@ -7,16 +7,12 @@
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    /* --- FIX START: Universal Reset --- */
-    /* This ensures padding doesn't make boxes wider than they should be */
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
-    /* --- FIX END --- */
 
-    /* Additional styles for menu page */
     .menu-page {
       min-height: 100vh;
       padding: 20px;
@@ -242,10 +238,8 @@
       margin-top: 15px;
     }
 
-    /* --- FIX START: Mobile Adjustments --- */
     @media (max-width: 768px) {
       #menuItems {
-        /* This forces exactly 2 equal columns */
         grid-template-columns: repeat(2, minmax(0, 1fr)); 
         gap: 15px;
         padding: 0 10px;
@@ -264,17 +258,14 @@
         font-size: 22px;
       }
       
-      /* Slightly smaller images on mobile to prevent overflow */
       #menuItems .item img {
         height: 140px;
       }
     }
-    /* --- FIX END --- */
   </style>
 </head>
 <body>
   <script>
-    // Load dark mode immediately
     (function() {
       try {
         const theme = localStorage.getItem('theme');
@@ -366,7 +357,6 @@
         { img: "images/ram10.png", name: "Veggie Soon", price: "₱85", desc: "Vegetable noodle soup, light and refreshing." },
         { img: "images/ram11.png", name: "Koreno Beef", price: "₱85", desc: "Beef-flavored Korean noodles with savory taste." },
         { img: "images/ram12.png", name: "Koreno Shrimp", price: "₱85", desc: "Shrimp-flavored noodles with seafood goodness." },
-        // NEW ITEMS ADDED
         { img: "images/ram13.png", name: "Koreno Chicken", price: "₱85", desc: "Description coming soon..." },
         { img: "images/ram14.png", name: "Racoon Mild", price: "₱110", desc: "Description coming soon..." },
         { img: "images/ram15.png", name: "Racoon Spicy", price: "₱110", desc: "Description coming soon..." },
@@ -383,7 +373,6 @@
         { img: "images/stir6.png", name: "Koreno Jjajangmen", price: "₱86", desc: "Korean black bean sauce stir-fry noodles." },
         { img: "images/stir7.png", name: "Nongshim Cheese Stir Fry", price: "₱130", desc: "Cheese-loaded stir-fry from Nongshim." },
         { img: "images/stir8.png", name: "Nongshim Shin Ramyun Spicy", price: "₱130", desc: "Spicy stir-fry version of classic Shin Ramyun." },
-        // NEW ITEMS ADDED
         { img: "images/stir9.png", name: "Chapagetti", price: "₱104", desc: "Description coming soon..." },
         { img: "images/stir10.png", name: "Beef Bulgogi", price: "₱102", desc: "Description coming soon..." },
         { img: "images/stir11.png", name: "Buldak Cream Carbonara", price: "₱128", desc: "Description coming soon..." },
@@ -541,7 +530,6 @@
       renderItems(allItems);
     });
 
-    // Dark mode toggle
     const themeToggle = document.getElementById('themeToggle');
     if (themeToggle) {
       themeToggle.onclick = function() {
