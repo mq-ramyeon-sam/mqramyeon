@@ -1,4 +1,4 @@
-/* Header */
+/* ==================== HEADER SECTION ==================== */
 * {
   box-sizing: border-box;
   scroll-behavior: smooth;
@@ -12,6 +12,7 @@ body {
   overflow-x: hidden;
 }
 
+/* Modern Header */
 header {
   position: sticky;
   top: 0;
@@ -32,6 +33,7 @@ header:hover {
   box-shadow: 0 4px 30px rgba(255, 107, 53, 0.4);
 }
 
+/* Brand Section */
 .brand {
   display: flex;
   align-items: center;
@@ -70,6 +72,7 @@ header:hover {
   font-size: 20px;
 }
 
+/* Navigation Links */
 nav {
   display: flex;
   gap: 8px;
@@ -126,6 +129,7 @@ nav a:hover {
   transform: translateY(-2px);
 }
 
+/* Mobile Responsive Header */
 @media (max-width: 768px) {
   header {
     padding: 12px 20px;
@@ -172,8 +176,8 @@ nav a:hover {
     padding: 5px 10px;
   }
 }
+/* ==================== HERO SECTION ==================== */
 
-/* Hero */
 .hero {
   position: relative;
   text-align: center;
@@ -187,6 +191,7 @@ nav a:hover {
   justify-content: center;
 }
 
+/* Animated gradient background */
 .hero::before {
   content: '';
   position: absolute;
@@ -205,6 +210,7 @@ nav a:hover {
   50% { opacity: 0.8; transform: scale(1.1); }
 }
 
+/* Hero Content */
 .hero-content {
   position: relative;
   z-index: 5;
@@ -230,6 +236,7 @@ nav a:hover {
   line-height: 1.6;
 }
 
+/* CTA Button */
 .hero-content .btn {
   display: inline-block;
   padding: 16px 40px;
@@ -269,6 +276,7 @@ nav a:hover {
   background: #fff5f0;
 }
 
+/* Parallax Floating Elements */
 .parallax-layer {
   position: absolute;
   opacity: 0.7;
@@ -283,6 +291,7 @@ nav a:hover {
   height: auto;
 }
 
+/* Individual Layer Positioning */
 .layer1 {
   top: 12%;
   left: 8%;
@@ -313,13 +322,23 @@ nav a:hover {
   animation-delay: 3s;
 }
 
+/* Floating Animation */
 @keyframes float {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  25% { transform: translateY(-12px) rotate(2deg); }
-  50% { transform: translateY(-20px) rotate(-2deg); }
-  75% { transform: translateY(-12px) rotate(2deg); }
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg); 
+  }
+  25% {
+    transform: translateY(-12px) rotate(2deg);
+  }
+  50% { 
+    transform: translateY(-20px) rotate(-2deg); 
+  }
+  75% {
+    transform: translateY(-12px) rotate(2deg);
+  }
 }
 
+/* Fade In Up Animation */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -331,6 +350,7 @@ nav a:hover {
   }
 }
 
+/* Mobile Responsive Hero */
 @media (max-width: 768px) {
   .hero {
     padding: 100px 20px 80px;
@@ -379,8 +399,8 @@ nav a:hover {
     opacity: 0.5;
   }
 }
+/* ==================== MENU SECTION ==================== */
 
-/* Menu */
 .menu {
   padding: 80px 40px;
   text-align: center;
@@ -415,6 +435,7 @@ nav a:hover {
   font-weight: 400;
 }
 
+/* Menu Grid Layout */
 .menu-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -425,11 +446,13 @@ nav a:hover {
   margin-right: auto;
 }
 
+/* Menu Item Link Wrapper */
 .menu-item-link {
   text-decoration: none;
   display: block;
 }
 
+/* Menu Item Cards */
 .menu-item {
   background: white;
   padding: 35px 25px;
@@ -442,6 +465,7 @@ nav a:hover {
   border: 2px solid transparent;
 }
 
+/* Gradient border effect on hover */
 .menu-item::before {
   content: '';
   position: absolute;
@@ -463,6 +487,7 @@ nav a:hover {
   opacity: 1;
 }
 
+/* Background glow effect */
 .menu-item::after {
   content: '';
   position: absolute;
@@ -488,6 +513,7 @@ nav a:hover {
   border-color: rgba(255, 107, 53, 0.2);
 }
 
+/* Menu Item Title */
 .menu-item h3 {
   font-size: 22px;
   color: #2c2c2c;
@@ -496,16 +522,21 @@ nav a:hover {
   position: relative;
   z-index: 1;
   transition: color 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
 }
 
 .menu-item:hover h3 {
   color: #ff6b35;
 }
 
+/* Emoji styling - uses text content from HTML */
+.menu-item h3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Target the emoji (first part of the text) */
 .menu-item {
   font-size: 50px;
   transition: transform 0.4s ease;
@@ -515,6 +546,7 @@ nav a:hover {
   transform: translateY(-12px) scale(1.02);
 }
 
+/* Menu Detail Grid (for modal items) */
 .menu-detail {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -564,6 +596,7 @@ nav a:hover {
   margin-top: 5px;
 }
 
+/* Mobile Responsive Menu */
 @media (max-width: 768px) {
   .menu {
     padding: 60px 20px;
@@ -623,7 +656,8 @@ nav a:hover {
   }
 }
 
-/* Video Advertisement */
+/* ==================== VIDEO ADVERTISEMENT SECTION ==================== */
+
 .ad-video {
   position: relative;
   width: 100%;
@@ -633,6 +667,7 @@ nav a:hover {
   overflow: hidden;
 }
 
+/* Video wrapper with subtle shadow */
 .ad-video::before {
   content: '';
   position: absolute;
@@ -664,6 +699,7 @@ nav a:hover {
   box-shadow: 0 15px 50px rgba(0, 0, 0, 0.25);
 }
 
+/* Unmute Button Styling */
 .unmute-btn {
   position: absolute;
   bottom: 20px;
@@ -683,7 +719,6 @@ nav a:hover {
   align-items: center;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-  animation: pulse 2s infinite;
 }
 
 .unmute-btn:hover {
@@ -691,13 +726,13 @@ nav a:hover {
   border-color: rgba(255, 255, 255, 0.4);
   transform: scale(1.1);
   box-shadow: 0 6px 20px rgba(255, 107, 53, 0.5);
-  animation: none;
 }
 
 .unmute-btn:active {
   transform: scale(0.95);
 }
 
+/* Pulsing animation for unmute button */
 @keyframes pulse {
   0%, 100% {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3),
@@ -709,11 +744,21 @@ nav a:hover {
   }
 }
 
+.unmute-btn {
+  animation: pulse 2s infinite;
+}
+
+.unmute-btn:hover {
+  animation: none;
+}
+
+/* Hidden state for unmute button */
 .unmute-btn[style*="display: none"] {
   opacity: 0;
   pointer-events: none;
 }
 
+/* Mobile Responsive Video */
 @media (max-width: 768px) {
   .ad-video {
     margin: 40px auto;
@@ -752,7 +797,8 @@ nav a:hover {
   }
 }
 
-/* About & Contact */
+/* ==================== ABOUT & CONTACT SECTIONS ==================== */
+
 .about, .contact {
   padding: 80px 40px;
   text-align: center;
@@ -809,10 +855,12 @@ nav a:hover {
   gap: 10px;
 }
 
+/* Location Section */
 .location-section {
   margin-top: 40px;
 }
 
+/* Map Container */
 .map-container {
   position: relative;
   width: 100%;
@@ -820,7 +868,7 @@ nav a:hover {
   margin: 30px auto;
   border-radius: 16px;
   overflow: hidden;
-  padding-bottom: 56.25%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
   height: 0;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -840,6 +888,7 @@ nav a:hover {
   border: 0;
 }
 
+/* Directions Button */
 .directions-btn {
   display: inline-block;
   margin: 25px auto;
@@ -884,6 +933,7 @@ nav a:hover {
   transform: translateY(-2px) scale(1.02);
 }
 
+/* Mobile Responsive About & Contact */
 @media (max-width: 768px) {
   .about, .contact {
     padding: 60px 20px;
@@ -918,8 +968,8 @@ nav a:hover {
     font-size: 14px;
   }
 }
+/* ==================== MODAL SYSTEM ==================== */
 
-/* Modal */
 .modal {
   display: none;
   position: fixed;
@@ -938,10 +988,15 @@ nav a:hover {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
+/* Modal Content Container */
 .modal-content {
   background: white;
   margin: auto;
@@ -967,6 +1022,7 @@ nav a:hover {
   }
 }
 
+/* Custom Scrollbar for Modal */
 .modal-content::-webkit-scrollbar {
   width: 8px;
 }
@@ -985,6 +1041,7 @@ nav a:hover {
   background: linear-gradient(180deg, #ff8c42, #ffa45e);
 }
 
+/* Close Button */
 .close {
   position: absolute;
   top: 20px;
@@ -1015,6 +1072,7 @@ nav a:hover {
   transform: rotate(90deg) scale(0.95);
 }
 
+/* Modal Header */
 .modal-content h2 {
   font-size: 32px;
   font-weight: 800;
@@ -1031,6 +1089,7 @@ nav a:hover {
   margin-bottom: 30px;
 }
 
+/* Modal Menu Detail Grid */
 .modal .menu-detail {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1049,6 +1108,7 @@ nav a:hover {
   overflow: hidden;
 }
 
+/* Hover gradient effect */
 .modal .menu-detail .item::before {
   content: '';
   position: absolute;
@@ -1073,6 +1133,7 @@ nav a:hover {
   border-color: rgba(255, 107, 53, 0.3);
 }
 
+/* Modal Item Images */
 .modal .menu-detail .item img {
   width: 100%;
   height: 200px;
@@ -1089,6 +1150,7 @@ nav a:hover {
   transform: scale(1.05);
 }
 
+/* Modal Item Text */
 .modal .menu-detail .item p {
   margin: 10px 0 5px;
   font-weight: 600;
@@ -1109,6 +1171,7 @@ nav a:hover {
   z-index: 1;
 }
 
+/* Single Item Modal (for menu.html detail view) */
 #itemModal .modal-content {
   max-width: 500px;
   text-align: center;
@@ -1147,6 +1210,7 @@ nav a:hover {
   text-shadow: 2px 2px 4px rgba(255, 107, 53, 0.1);
 }
 
+/* Mobile Responsive Modal */
 @media (max-width: 768px) {
   .modal-content {
     padding: 25px 20px;
@@ -1246,8 +1310,8 @@ nav a:hover {
     font-size: 24px;
   }
 }
+/* ==================== FOOTER ==================== */
 
-/* Footer */
 footer {
   text-align: center;
   padding: 30px 20px;
@@ -1257,6 +1321,7 @@ footer {
   overflow: hidden;
 }
 
+/* Animated background pattern */
 footer::before {
   content: '';
   position: absolute;
@@ -1297,6 +1362,7 @@ footer p::before {
   opacity: 0.7;
 }
 
+/* Mobile Footer */
 @media (max-width: 480px) {
   footer {
     padding: 25px 15px;
@@ -1312,7 +1378,45 @@ footer p::before {
   }
 }
 
-/* Animations */
+/* ==================== GLOBAL ANIMATIONS ==================== */
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade Up Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Slide Up Animation */
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Pop Animation */
 @keyframes pop {
   0% {
     transform: scale(0.8);
@@ -1327,10 +1431,12 @@ footer p::before {
   }
 }
 
+/* Fade-in class */
 .fade-in {
   animation: fadeIn 1s ease-out;
 }
 
+/* Scroll Fade-Up Effect */
 .fade-up {
   opacity: 0;
   transform: translateY(40px);
@@ -1342,16 +1448,20 @@ footer p::before {
   transform: translateY(0);
 }
 
+/* Stagger animation delays for multiple fade-up elements */
 .fade-up:nth-child(1) { transition-delay: 0.1s; }
 .fade-up:nth-child(2) { transition-delay: 0.2s; }
 .fade-up:nth-child(3) { transition-delay: 0.3s; }
 .fade-up:nth-child(4) { transition-delay: 0.4s; }
 
-/* Utilities */
+/* ==================== UTILITY CLASSES ==================== */
+
+/* Smooth transitions */
 .smooth-transition {
   transition: all 0.3s ease;
 }
 
+/* Button base styles */
 .btn {
   display: inline-block;
   padding: 14px 35px;
@@ -1397,7 +1507,9 @@ footer p::before {
   transform: translateY(-2px) scale(1.02);
 }
 
-/* Loading States */
+/* ==================== LOADING STATES ==================== */
+
+/* Skeleton loader for images */
 .skeleton {
   background: linear-gradient(
     90deg,
@@ -1415,13 +1527,16 @@ footer p::before {
   100% { background-position: -200% 0; }
 }
 
-/* Accessibility */
+/* ==================== ACCESSIBILITY ==================== */
+
+/* Focus visible for keyboard navigation */
 *:focus-visible {
   outline: 3px solid #ff6b35;
   outline-offset: 3px;
   border-radius: 4px;
 }
 
+/* Reduce motion for users who prefer it */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -1433,7 +1548,8 @@ footer p::before {
   }
 }
 
-/* Print Styles */
+/* ==================== PRINT STYLES ==================== */
+
 @media print {
   header,
   footer,
@@ -1456,7 +1572,8 @@ footer p::before {
   }
 }
 
-/* Selection Styling */
+/* ==================== SELECTION STYLING ==================== */
+
 ::selection {
   background: #ff6b35;
   color: white;
@@ -1467,11 +1584,13 @@ footer p::before {
   color: white;
 }
 
-/* Smooth Scrolling */
+/* ==================== SMOOTH SCROLLING ==================== */
+
 html {
   scroll-behavior: smooth;
 }
 
+/* Custom scrollbar for webkit browsers */
 ::-webkit-scrollbar {
   width: 12px;
 }
@@ -1489,13 +1608,15 @@ html {
   background: linear-gradient(180deg, #ff8c42, #ffa45e);
 }
 
-/* Image Optimization */
+/* ==================== IMAGE OPTIMIZATION ==================== */
+
 img {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
+/* Lazy loading placeholder */
 img[loading="lazy"] {
   opacity: 0;
   transition: opacity 0.3s;
@@ -1505,7 +1626,8 @@ img[loading="lazy"].loaded {
   opacity: 1;
 }
 
-/* Typography */
+/* ==================== RESPONSIVE TYPOGRAPHY ==================== */
+
 @media (max-width: 1200px) {
   html { font-size: 15px; }
 }
@@ -1518,20 +1640,23 @@ img[loading="lazy"].loaded {
   html { font-size: 13px; }
 }
 
-/* Touch Devices */
+/* ==================== HOVER EFFECTS FOR TOUCH DEVICES ==================== */
+
 @media (hover: none) and (pointer: coarse) {
+  /* Remove hover effects on touch devices */
   .menu-item:hover,
   .modal .menu-detail .item:hover {
     transform: none;
   }
   
+  /* Add tap effect instead */
   .menu-item:active,
   .modal .menu-detail .item:active {
     transform: scale(0.97);
   }
 }
+/* ==================== FLOATING MESSAGE BUTTON ==================== */
 
-/* Message Button */
 .message-btn {
   position: fixed;
   bottom: 30px;
@@ -1562,12 +1687,14 @@ img[loading="lazy"].loaded {
   transform: scale(0.95);
 }
 
+/* Facebook Messenger icon */
 .message-btn svg {
   width: 32px;
   height: 32px;
   fill: white;
 }
 
+/* Pulse animation */
 .message-btn::before {
   content: '';
   position: absolute;
@@ -1594,6 +1721,7 @@ img[loading="lazy"].loaded {
   50% { transform: translateY(-10px); }
 }
 
+/* Tooltip on hover */
 .message-btn::after {
   content: 'Message Us';
   position: absolute;
@@ -1613,9 +1741,14 @@ img[loading="lazy"].loaded {
 
 .message-btn:hover::after {
   opacity: 1;
+}
+
+/* Arrow for tooltip */
+.message-btn:hover::after {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
+/* Mobile adjustments */
 @media (max-width: 768px) {
   .message-btn {
     bottom: 20px;
@@ -1630,7 +1763,7 @@ img[loading="lazy"].loaded {
   }
   
   .message-btn::after {
-    display: none;
+    display: none; /* Hide tooltip on mobile */
   }
 }
 
@@ -1647,13 +1780,13 @@ img[loading="lazy"].loaded {
     height: 26px;
   }
 }
+/* ==================== DARK MODE TOGGLE ==================== */
 
-/* Dark Mode Toggle */
 .theme-toggle {
   position: fixed;
   top: 100px;
   right: 30px;
-  z-index: 99999;
+  z-index: 9997;
   background: white;
   width: 50px;
   height: 50px;
@@ -1665,7 +1798,6 @@ img[loading="lazy"].loaded {
   cursor: pointer;
   transition: all 0.3s ease;
   border: 2px solid #ff6b35;
-  pointer-events: auto;
 }
 
 .theme-toggle:hover {
@@ -1679,6 +1811,7 @@ img[loading="lazy"].loaded {
   transition: all 0.3s ease;
 }
 
+/* Sun icon (light mode) */
 .theme-toggle .sun-icon {
   fill: #ff6b35;
   display: block;
@@ -1689,6 +1822,7 @@ img[loading="lazy"].loaded {
   display: none;
 }
 
+/* Mobile positioning */
 @media (max-width: 768px) {
   .theme-toggle {
     top: 80px;
@@ -1703,7 +1837,8 @@ img[loading="lazy"].loaded {
   }
 }
 
-/* Dark Mode Styles */
+/* ==================== DARK MODE STYLES ==================== */
+
 body.dark-mode {
   background: #1a1a1a;
   color: #e0e0e0;
@@ -1730,8 +1865,7 @@ body.dark-mode .btn {
 
 body.dark-mode .menu,
 body.dark-mode .about,
-body.dark-mode .contact,
-body.dark-mode .menu-page {
+body.dark-mode .contact {
   background: #1a1a1a;
 }
 
@@ -1755,16 +1889,13 @@ body.dark-mode .menu-item:hover h3 {
 
 body.dark-mode .about h2,
 body.dark-mode .contact h2,
-body.dark-mode .menu h2,
-body.dark-mode .menu-header h2,
-body.dark-mode .category-title {
+body.dark-mode .menu h2 {
   color: #ff8c42;
 }
 
 body.dark-mode .about p,
 body.dark-mode .contact p,
-body.dark-mode .menu p,
-body.dark-mode .menu-header p {
+body.dark-mode .menu p {
   color: #b0b0b0;
 }
 
@@ -1821,6 +1952,7 @@ body.dark-mode .theme-toggle .moon-icon {
   display: block;
 }
 
+/* Dark mode scrollbar */
 body.dark-mode::-webkit-scrollbar-track {
   background: #1a1a1a;
 }
@@ -1829,87 +1961,8 @@ body.dark-mode::-webkit-scrollbar-thumb {
   background: linear-gradient(180deg, #ff6b35, #ff8c42);
 }
 
-/* Menu Page Specific Dark Mode */
-body.dark-mode .back-home {
-  background: linear-gradient(135deg, #ff6b35, #ff8c42);
-  color: white;
-}
+/* ==================== ENHANCED CTA BUTTONS ==================== */
 
-body.dark-mode .back-home:hover {
-  background: linear-gradient(135deg, #ff8c42, #ffa45e);
-}
-
-body.dark-mode .category-btn {
-  background: #2d2d2d;
-  color: #ff8c42;
-  border-color: #ff8c42;
-}
-
-body.dark-mode .category-btn:hover {
-  background: #3d3d3d;
-  border-color: #ffa45e;
-}
-
-body.dark-mode .category-btn.active {
-  background: linear-gradient(90deg, #ff6b35, #ff8c42);
-  color: white;
-  border-color: #ff8c42;
-}
-
-body.dark-mode #searchInput {
-  background: #2d2d2d;
-  color: #e0e0e0;
-  border-color: #ff8c42;
-}
-
-body.dark-mode #searchInput::placeholder {
-  color: #888;
-}
-
-body.dark-mode #searchInput:focus {
-  background: #3d3d3d;
-  border-color: #ffa45e;
-}
-
-body.dark-mode #menuItems .item {
-  background: #2d2d2d;
-  border: 2px solid #3d3d3d;
-}
-
-body.dark-mode #menuItems .item:hover {
-  background: #3d3d3d;
-  border-color: #ff6b35;
-  box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
-}
-
-body.dark-mode #menuItems .item img,
-body.dark-mode #modalImg {
-  background: #1a1a1a;
-}
-
-body.dark-mode #menuItems .item p,
-body.dark-mode #modalName {
-  color: #e0e0e0;
-}
-
-body.dark-mode #menuItems .item .price,
-body.dark-mode #modalPrice {
-  color: #ff8c42;
-}
-
-body.dark-mode .no-results {
-  color: #888;
-}
-
-body.dark-mode #itemModal .modal-content {
-  background: #2d2d2d;
-}
-
-body.dark-mode #modalDesc {
-  color: #b0b0b0;
-}
-
-/* CTA Buttons */
 .cta-container {
   display: flex;
   gap: 20px;
@@ -1936,6 +1989,7 @@ body.dark-mode #modalDesc {
   font-family: 'Poppins', sans-serif;
 }
 
+/* Primary CTA (Order Now) */
 .cta-primary {
   background: linear-gradient(135deg, #ff6b35, #ff8c42);
   color: white;
@@ -1965,6 +2019,7 @@ body.dark-mode #modalDesc {
   box-shadow: 0 15px 35px rgba(255, 107, 53, 0.6);
 }
 
+/* Secondary CTA (View Menu) */
 .cta-secondary {
   background: white;
   color: #ff6b35;
@@ -1979,6 +2034,7 @@ body.dark-mode #modalDesc {
   border-color: #ff8c42;
 }
 
+/* CTA Icons */
 .cta-primary svg,
 .cta-secondary svg {
   width: 20px;
@@ -1991,6 +2047,7 @@ body.dark-mode #modalDesc {
   transform: translateX(5px);
 }
 
+/* Dark mode CTA adjustments */
 body.dark-mode .cta-secondary {
   background: #2d2d2d;
   color: #ff8c42;
@@ -2002,6 +2059,7 @@ body.dark-mode .cta-secondary:hover {
   border-color: #ffa45e;
 }
 
+/* Mobile CTA */
 @media (max-width: 768px) {
   .cta-container {
     gap: 15px;
@@ -2023,17 +2081,440 @@ body.dark-mode .cta-secondary:hover {
     font-size: 15px;
   }
 }
+/* ==================== DARK MODE - MENU PAGE SPECIFIC ==================== */
 
-/* Page Transitions */
+/* Menu Page Layout */
+body.dark-mode .menu-page {
+  background: #1a1a1a;
+}
+
+/* Back to Home Button */
+body.dark-mode .back-home {
+  background: linear-gradient(135deg, #ff6b35, #ff8c42);
+  color: white;
+}
+
+body.dark-mode .back-home:hover {
+  background: linear-gradient(135deg, #ff8c42, #ffa45e);
+}
+
+/* Menu Header */
+body.dark-mode .menu-header h2 {
+  color: #ff8c42;
+}
+
+body.dark-mode .menu-header p {
+  color: #b0b0b0;
+}
+
+/* Category Buttons */
+body.dark-mode .category-btn {
+  background: #2d2d2d;
+  color: #ff8c42;
+  border-color: #ff8c42;
+}
+
+body.dark-mode .category-btn:hover {
+  background: #3d3d3d;
+  border-color: #ffa45e;
+}
+
+body.dark-mode .category-btn.active {
+  background: linear-gradient(90deg, #ff6b35, #ff8c42);
+  color: white;
+  border-color: #ff8c42;
+}
+
+/* Search Input */
+body.dark-mode #searchInput {
+  background: #2d2d2d;
+  color: #e0e0e0;
+  border-color: #ff8c42;
+}
+
+body.dark-mode #searchInput::placeholder {
+  color: #888;
+}
+
+body.dark-mode #searchInput:focus {
+  background: #3d3d3d;
+  border-color: #ffa45e;
+}
+
+/* Category Title */
+body.dark-mode .category-title {
+  color: #ff8c42;
+}
+
+/* Menu Items Grid */
+body.dark-mode #menuItems .item {
+  background: #2d2d2d;
+  border: 2px solid #3d3d3d;
+}
+
+body.dark-mode #menuItems .item:hover {
+  background: #3d3d3d;
+  border-color: #ff6b35;
+  box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+}
+
+body.dark-mode #menuItems .item img {
+  background: #1a1a1a;
+}
+
+body.dark-mode #menuItems .item p {
+  color: #e0e0e0;
+}
+
+body.dark-mode #menuItems .item .price {
+  color: #ff8c42;
+}
+
+/* No Results Message */
+body.dark-mode .no-results {
+  color: #888;
+}
+
+/* Single Item Modal (menu.html specific) */
+body.dark-mode #itemModal .modal-content {
+  background: #2d2d2d;
+}
+
+body.dark-mode #modalImg {
+  background: #1a1a1a;
+}
+
+body.dark-mode #modalName {
+  color: #e0e0e0;
+}
+
+body.dark-mode #modalDesc {
+  color: #b0b0b0;
+}
+
+body.dark-mode #modalPrice {
+  color: #ff8c42;
+}
+
+/* ==================== DARK MODE TOGGLE ==================== */
+
+.theme-toggle {
+  position: fixed;
+  top: 100px;
+  right: 30px;
+  z-index: 99999;
+  background: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid #ff6b35;
+  pointer-events: auto;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1) rotate(15deg);
+  box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+}
+
+.theme-toggle svg {
+  width: 24px;
+  height: 24px;
+  transition: all 0.3s ease;
+}
+
+/* Sun icon (light mode) */
+.theme-toggle .sun-icon {
+  fill: #ff6b35;
+  display: block;
+}
+
+.theme-toggle .moon-icon {
+  fill: #ffd700;
+  display: none;
+}
+
+/* Mobile positioning */
+@media (max-width: 768px) {
+  .theme-toggle {
+    top: 80px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+  }
+  
+  .theme-toggle svg {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+/* ==================== DARK MODE STYLES ==================== */
+
+body.dark-mode {
+  background: #1a1a1a;
+  color: #e0e0e0;
+}
+
+body.dark-mode header {
+  background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+  box-shadow: 0 2px 25px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .hero {
+  background: linear-gradient(135deg, #2d2d2d 0%, #3d3d3d 50%, #2d2d2d 100%);
+}
+
+body.dark-mode .hero-content h2,
+body.dark-mode .hero-content p {
+  color: #ffffff;
+}
+
+body.dark-mode .btn {
+  background: linear-gradient(135deg, #ff6b35, #ff8c42);
+  color: white;
+}
+
+body.dark-mode .menu,
+body.dark-mode .about,
+body.dark-mode .contact {
+  background: #1a1a1a;
+}
+
+body.dark-mode .menu-item {
+  background: #2d2d2d;
+  border: 2px solid #3d3d3d;
+}
+
+body.dark-mode .menu-item:hover {
+  background: #3d3d3d;
+  border-color: #ff6b35;
+}
+
+body.dark-mode .menu-item h3 {
+  color: #e0e0e0;
+}
+
+body.dark-mode .menu-item:hover h3 {
+  color: #ff8c42;
+}
+
+body.dark-mode .about h2,
+body.dark-mode .contact h2,
+body.dark-mode .menu h2 {
+  color: #ff8c42;
+}
+
+body.dark-mode .about p,
+body.dark-mode .contact p,
+body.dark-mode .menu p {
+  color: #b0b0b0;
+}
+
+body.dark-mode .modal {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+body.dark-mode .modal-content {
+  background: #2d2d2d;
+  color: #e0e0e0;
+}
+
+body.dark-mode .modal-content h2 {
+  color: #ff8c42;
+}
+
+body.dark-mode .modal .menu-detail .item {
+  background: #1a1a1a;
+  border-color: #3d3d3d;
+}
+
+body.dark-mode .modal .menu-detail .item:hover {
+  background: #3d3d3d;
+  border-color: #ff6b35;
+}
+
+body.dark-mode .modal .menu-detail .item p {
+  color: #e0e0e0;
+}
+
+body.dark-mode .close {
+  color: #b0b0b0;
+}
+
+body.dark-mode .close:hover {
+  color: white;
+  background: #ff6b35;
+}
+
+body.dark-mode footer {
+  background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+}
+
+body.dark-mode .theme-toggle {
+  background: #2d2d2d;
+  border-color: #ff8c42;
+}
+
+body.dark-mode .theme-toggle .sun-icon {
+  display: none;
+}
+
+body.dark-mode .theme-toggle .moon-icon {
+  display: block;
+}
+
+/* Dark mode scrollbar */
+body.dark-mode::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+body.dark-mode::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #ff6b35, #ff8c42);
+}
+
+/* ==================== ENHANCED CTA BUTTONS ==================== */
+
+.cta-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.cta-primary,
+.cta-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 35px;
+  text-decoration: none;
+  border-radius: 50px;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Primary CTA (Order Now) */
+.cta-primary {
+  background: linear-gradient(135deg, #ff6b35, #ff8c42);
+  color: white;
+  box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+}
+
+.cta-primary::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.cta-primary:hover::before {
+  width: 400px;
+  height: 400px;
+}
+
+.cta-primary:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 15px 35px rgba(255, 107, 53, 0.6);
+}
+
+/* Secondary CTA (View Menu) */
+.cta-secondary {
+  background: white;
+  color: #ff6b35;
+  border: 3px solid #ff6b35;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.cta-secondary:hover {
+  background: #fff5f0;
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 12px 30px rgba(255, 107, 53, 0.3);
+  border-color: #ff8c42;
+}
+
+/* CTA Icons */
+.cta-primary svg,
+.cta-secondary svg {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+}
+
+.cta-primary:hover svg,
+.cta-secondary:hover svg {
+  transform: translateX(5px);
+}
+
+/* Dark mode CTA adjustments */
+body.dark-mode .cta-secondary {
+  background: #2d2d2d;
+  color: #ff8c42;
+  border-color: #ff8c42;
+}
+
+body.dark-mode .cta-secondary:hover {
+  background: #3d3d3d;
+  border-color: #ffa45e;
+}
+
+/* Mobile CTA */
+@media (max-width: 768px) {
+  .cta-container {
+    gap: 15px;
+  }
+  
+  .cta-primary,
+  .cta-secondary {
+    padding: 14px 28px;
+    font-size: 16px;
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cta-primary,
+  .cta-secondary {
+    padding: 12px 24px;
+    font-size: 15px;
+  }
+}
+/* ==================== SMOOTH PAGE TRANSITIONS ==================== */
+
+/* Page fade-in on load */
 body {
   animation: pageLoadFade 0.5s ease-in-out;
 }
 
 @keyframes pageLoadFade {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
+/* Page fade-out on navigation */
 body.page-transition {
   animation: pageUnloadFade 0.4s ease-in-out forwards;
 }
@@ -2049,6 +2530,7 @@ body.page-transition {
   }
 }
 
+/* Loading overlay */
 .page-loader {
   position: fixed;
   top: 0;
@@ -2096,14 +2578,17 @@ body.page-transition {
   letter-spacing: 0.5px;
 }
 
+/* Dark mode loader */
 body.dark-mode .page-loader {
   background: linear-gradient(135deg, #2d2d2d, #1a1a1a);
 }
 
+/* Smooth link transitions */
 a {
   transition: all 0.3s ease;
 }
 
+/* Navigation link hover with smooth transition */
 nav a {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
