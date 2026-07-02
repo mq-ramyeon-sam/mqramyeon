@@ -1,4 +1,3 @@
-// ==================== MENU ITEMS DATA ====================
 const menuItems = {
   ramyeon: [
     { img: "images/ram1.png", name: "Jin Ramen Mild", price: "₱87" },
@@ -36,17 +35,13 @@ const menuItems = {
   })),
 };
 
-// ==================== MODAL FUNCTIONS ====================
 function openModal(category) {
   const modal = document.getElementById(category);
   if (!modal) return;
   
   const modalContent = modal.querySelector(".menu-detail");
-  
-  // Clear old content
   modalContent.innerHTML = "";
 
-  // Add items dynamically
   menuItems[category].forEach((item, index) => {
     const img = new Image();
     img.src = item.img;
@@ -61,21 +56,12 @@ function openModal(category) {
         <div class="price">${item.price}</div>
       `;
       modalContent.appendChild(div);
-      
-      // Trigger animation
       setTimeout(() => div.classList.add('visible'), 10);
-    };
-    
-    // If image doesn't exist, skip it
-    img.onerror = () => {
-      console.log(`Image not found: ${item.img}`);
     };
   });
 
   modal.style.display = "flex";
-  document.body.style.overflow = "hidden"; // Prevent body scroll
-  
-  // Add fade-in to modal
+  document.body.style.overflow = "hidden";
   setTimeout(() => modal.style.opacity = "1", 10);
 }
 
@@ -86,11 +72,10 @@ function closeModal(id) {
   modal.style.opacity = "0";
   setTimeout(() => {
     modal.style.display = "none";
-    document.body.style.overflow = ""; // Re-enable body scroll
+    document.body.style.overflow = "";
   }, 300);
 }
 
-// Close modal when clicking outside
 window.onclick = e => {
   document.querySelectorAll(".modal").forEach(modal => {
     if (e.target === modal) {
@@ -99,7 +84,6 @@ window.onclick = e => {
   });
 };
 
-// Close modal with ESC key
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
     document.querySelectorAll(".modal").forEach(modal => {
@@ -110,7 +94,6 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-// ==================== SCROLL ANIMATIONS ====================
 const fadeEls = document.querySelectorAll(".fade-up");
 const observerOptions = {
   threshold: 0.15,
@@ -121,7 +104,6 @@ const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add("visible");
-      // Optional: stop observing after animation
       observer.unobserve(entry.target);
     }
   });
@@ -129,7 +111,6 @@ const observer = new IntersectionObserver(entries => {
 
 fadeEls.forEach(el => observer.observe(el));
 
-// ==================== PARALLAX MOUSE MOVEMENT ====================
 let mouseX = 0;
 let mouseY = 0;
 let currentX = 0;
@@ -140,11 +121,9 @@ document.addEventListener("mousemove", (e) => {
   mouseY = (window.innerHeight - e.pageY) / 100;
 });
 
-// Smooth parallax animation
 function animateParallax() {
   const layers = document.querySelectorAll(".parallax-layer");
   
-  // Smooth interpolation
   currentX += (mouseX - currentX) * 0.1;
   currentY += (mouseY - currentY) * 0.1;
   
@@ -152,36 +131,30 @@ function animateParallax() {
     const speed = (index + 1) * 0.3;
     const x = currentX * speed;
     const y = currentY * speed;
-    
     layer.style.transform = `translate(${x}px, ${y}px)`;
   });
   
   requestAnimationFrame(animateParallax);
 }
 
-// Start parallax animation
 if (document.querySelectorAll(".parallax-layer").length > 0) {
   animateParallax();
 }
 
-// ==================== VIDEO CONTROLS ====================
 const video = document.getElementById('ramVideo');
 const unmuteBtn = document.getElementById('unmuteBtn');
 
 if (video && unmuteBtn) {
-  // Unmute video on button click
   unmuteBtn.addEventListener('click', function () {
     video.muted = false;
-    video.play().catch(err => console.log("Play error:", err));
+    video.play().catch(() => {});
     
-    // Fade out button
     unmuteBtn.style.opacity = '0';
     setTimeout(() => {
       unmuteBtn.style.display = 'none';
     }, 300);
   });
   
-  // Show button again if video is muted
   video.addEventListener('volumechange', function() {
     if (video.muted) {
       unmuteBtn.style.display = 'flex';
@@ -189,7 +162,6 @@ if (video && unmuteBtn) {
     }
   });
   
-  // Add play/pause on video click
   video.addEventListener('click', function() {
     if (video.paused) {
       video.play();
@@ -199,18 +171,14 @@ if (video && unmuteBtn) {
   });
 }
 
-// ==================== SMOOTH SCROLL FOR NAVIGATION ====================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     const href = this.getAttribute('href');
-    
-    // Skip empty hash or just "#"
     if (href === '#' || href === '') return;
     
     const target = document.querySelector(href);
     if (target) {
       e.preventDefault();
-      
       const headerOffset = 80;
       const elementPosition = target.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
@@ -223,7 +191,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// ==================== HEADER SCROLL EFFECT ====================
 let lastScroll = 0;
 const header = document.querySelector('header');
 
@@ -236,17 +203,13 @@ window.addEventListener('scroll', () => {
   }
   
   if (currentScroll > lastScroll) {
-    // Scrolling down - enhance shadow
     header.style.boxShadow = '0 4px 30px rgba(255, 107, 53, 0.4)';
   } else {
-    // Scrolling up - reduce shadow
     header.style.boxShadow = '0 2px 25px rgba(255, 107, 53, 0.3)';
   }
-  
   lastScroll = currentScroll;
 });
 
-// ==================== IMAGE LAZY LOADING ====================
 document.addEventListener('DOMContentLoaded', () => {
   const lazyImages = document.querySelectorAll('img[loading="lazy"]');
   
@@ -265,8 +228,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-// ==================== PERFORMANCE OPTIMIZATION ====================
-// Debounce function for resize events
 function debounce(func, wait) {
   let timeout;
   return function executedFunction(...args) {
@@ -279,31 +240,15 @@ function debounce(func, wait) {
   };
 }
 
-// Handle window resize
-const handleResize = debounce(() => {
-  // Recalculate any size-dependent elements here
-  console.log('Window resized');
-}, 250);
-
+const handleResize = debounce(() => {}, 250);
 window.addEventListener('resize', handleResize);
 
-// ==================== MENU PAGE SPECIFIC CODE ====================
-// This section only runs on menu.html page
 if (document.getElementById('menuItems')) {
-  console.log('✅ Menu page detected - enhanced menu features loaded');
-  
-  // The menu.html has its own script inside the HTML file
-  // Make sure clicks on menu items work
   document.addEventListener('click', function(e) {
     const menuItem = e.target.closest('#menuItems .item');
-    if (menuItem) {
-      console.log('🍜 Menu item clicked!');
-    }
   });
 }
 
-// ==================== ACCESSIBILITY ENHANCEMENTS ====================
-// Add keyboard navigation for modals
 document.addEventListener('keydown', (e) => {
   const openModal = document.querySelector('.modal[style*="display: flex"]');
   
@@ -315,7 +260,6 @@ document.addEventListener('keydown', (e) => {
     const firstElement = focusableElements[0];
     const lastElement = focusableElements[focusableElements.length - 1];
     
-    // Trap focus within modal
     if (e.shiftKey && document.activeElement === firstElement) {
       lastElement.focus();
       e.preventDefault();
@@ -326,8 +270,6 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-// ==================== SMOOTH PAGE TRANSITIONS ====================
-// Create loader element
 const createPageLoader = () => {
   const loader = document.createElement('div');
   loader.className = 'page-loader';
@@ -341,19 +283,14 @@ const createPageLoader = () => {
   return loader;
 };
 
-// Get or create loader
 let pageLoader = document.querySelector('.page-loader');
 if (!pageLoader) {
   pageLoader = createPageLoader();
 }
 
-// Handle all internal link clicks (ONLY for navigation links)
 document.addEventListener('click', function(e) {
-  
-  // EMERGENCY: If on menu.html, don't intercept ANYTHING except nav links
   if (document.getElementById('menuItems')) {
     const link = e.target.closest('a');
-    // Only intercept header nav on menu page
     if (link && link.closest('nav')) {
       if (link.href && !link.href.includes('#') && link.hostname === window.location.hostname) {
         e.preventDefault();
@@ -362,66 +299,38 @@ document.addEventListener('click', function(e) {
         setTimeout(() => { window.location.href = link.href; }, 400);
       }
     }
-    return; // Exit early on menu page for all other clicks
+    return; 
   }
   
-  // FIRST: Check if clicking on menu items - let them work!
-  if (e.target.closest('#menuItems .item')) {
-    console.log('✅ Menu item click - allowing it');
-    return; // Don't intercept menu items
-  }
-  
-  // Check if clicking on modal close or inside modal
-  if (e.target.closest('.modal') || e.target.closest('.close')) {
-    return; // Don't intercept modal interactions
+  if (e.target.closest('#menuItems .item') || e.target.closest('.modal') || e.target.closest('.close')) {
+    return; 
   }
   
   const link = e.target.closest('a');
   
-  // Don't intercept if NO link was clicked
-  if (!link) {
+  if (!link || link.href.includes('facebook.com') || link.target === '_blank' || link.classList.contains('menu-item-link')) {
     return;
   }
   
-  // Don't intercept Facebook/external links
-  if (link.href.includes('facebook.com') || link.target === '_blank') {
-    return;
-  }
-  
-  // Don't intercept menu category links (these open modals on index.html)
-  if (link.classList.contains('menu-item-link')) {
-    return;
-  }
-  
-  // ONLY intercept navigation links (header nav, back button, main CTAs)
   const isNavLink = link.closest('nav') || 
                     link.classList.contains('back-home') ||
                     link.classList.contains('btn') ||
                     link.classList.contains('cta-primary') ||
                     link.classList.contains('cta-secondary');
   
-  if (isNavLink && 
-      link.href && 
-      !link.href.includes('#') &&
-      link.hostname === window.location.hostname) {
-    
+  if (isNavLink && link.href && !link.href.includes('#') && link.hostname === window.location.hostname) {
     e.preventDefault();
     const destination = link.href;
     
-    console.log('🚀 Navigating to:', destination);
-    
-    // Add fade-out animation
     document.body.classList.add('page-transition');
     pageLoader.classList.add('active');
     
-    // Navigate after animation
     setTimeout(() => {
       window.location.href = destination;
     }, 400);
   }
 });
 
-// Remove loader after page loads
 window.addEventListener('load', () => {
   setTimeout(() => {
     if (pageLoader) {
@@ -430,8 +339,6 @@ window.addEventListener('load', () => {
   }, 200);
 });
 
-// ==================== DARK MODE TOGGLE ====================
-// Apply saved theme IMMEDIATELY before page renders
 (function() {
   try {
     const savedTheme = localStorage.getItem('theme');
@@ -439,61 +346,29 @@ window.addEventListener('load', () => {
       document.documentElement.classList.add('dark-mode');
       document.body.classList.add('dark-mode');
     }
-  } catch (e) {
-    console.log('Could not load saved theme');
-  }
+  } catch (e) {}
 })();
 
-// Full dark mode functionality after DOM loads
 document.addEventListener('DOMContentLoaded', () => {
   const themeToggle = document.getElementById('themeToggle');
-  
-  if (!themeToggle) {
-    console.log('⚠️ Theme toggle button not found on this page');
-    console.log('💡 Make sure you added the button HTML before </body> tag');
-    return;
-  }
+  if (!themeToggle) return;
 
-  console.log('✅ Dark mode toggle found and ready!');
-
-  // Toggle theme on click
   themeToggle.addEventListener('click', function(e) {
     e.preventDefault();
     e.stopPropagation();
     
-    console.log('🖱️ Toggle button clicked!');
-    
-    // Toggle dark mode class
     document.body.classList.toggle('dark-mode');
     document.documentElement.classList.toggle('dark-mode');
     
     const isDark = document.body.classList.contains('dark-mode');
     
-    // Save to localStorage
     try {
       localStorage.setItem('theme', isDark ? 'dark' : 'light');
-      console.log(isDark ? '🌙 Dark mode ENABLED and SAVED' : '☀️ Light mode ENABLED and SAVED');
-    } catch (e) {
-      console.log('⚠️ Could not save theme preference');
-    }
+    } catch (e) {}
     
-    // Rotation animation
     this.style.transform = 'rotate(360deg) scale(1.1)';
     setTimeout(() => {
       this.style.transform = '';
     }, 300);
   });
-  
-  // Log current theme
-  const currentTheme = localStorage.getItem('theme') || 'light';
-  console.log(`Current theme: ${currentTheme}`);
 });
-
-// ==================== CONSOLE WELCOME MESSAGE ====================
-console.log('%c🍜 Welcome to MQ Ramyeon Snackhaus & Minimart!', 
-  'color: #ff6b35; font-size: 20px; font-weight: bold;');
-console.log('%cEnjoy delicious Korean noodles and meals!', 
-  'color: #ff8c42; font-size: 14px;');
-
-// ==================== INITIALIZATION ====================
-console.log('✅ All JavaScript features loaded successfully!');
