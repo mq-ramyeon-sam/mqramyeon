@@ -1,3 +1,8 @@
 User-agent: *
 Allow: /
+
+# Sitemap
 Sitemap: https://jasdev-cmd.github.io/mqramyeon/sitemap.xml
+
+# Optional crawl delay (ignored by Google, respected by some bots)
+Crawl-delay: 1
